@@ -11,7 +11,7 @@ class WebsitesController < ApplicationController
     def create
       @website = Website.new(website_params)
       if @website.save
-        redirect_to websites_path, notice: "Shortened URL created."
+        redirect_to submitted_website_path(@website), notice: "Shortened URL created."
       else
         redirect_to new_website_path, notice: "Shortened URL could not be created."
       end
