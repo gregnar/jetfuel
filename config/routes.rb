@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :websites, as: nil
+  resources :websites, path: ''
+  resources :submitted_websites, only: [:show]
 
   root to: 'websites#index'
-
-  get '/:id', to: 'websites#show'
 
 end

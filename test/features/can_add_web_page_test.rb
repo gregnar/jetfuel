@@ -10,9 +10,9 @@ class CanAddWebPageTest < ActiveSupport::TestCase
   test "it can create a link" do
     visit root_path
     click_link "Shorten a URL"
-    fill_in "website_long_url", with: "www.example.com/mrbigglesworth"
+    fill_in "website_long_url", with: "http://www.example.com/mrbigglesworth"
     click_button "Shorten!"
-    assert page.has_content? "www.example.com/mrbigglesworth"
+    assert page.has_content? "http://www.example.com/mrbigglesworth"
   end
 
 end
