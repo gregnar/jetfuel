@@ -2,5 +2,5 @@
 
 <h2>Websites by Popularity</h2>
 <% @websites.each do |website| %>
-  <p>Short URL: <%= link_to full_short_url(website), full_short_url(website) %> Long URL: <%= website.long_url %></p>
+  <p>Short URL: <%= link_to full_short_url(website), website_path(website), target: '_blank' %> Long URL: <%= website.long_url %></p>
 <% end %>
