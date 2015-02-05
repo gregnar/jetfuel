@@ -18,4 +18,5 @@ group :development, :test do
   gem 'spring'
   gem 'pry'
   gem 'capybara'
+  gem 'launchy'
 end
