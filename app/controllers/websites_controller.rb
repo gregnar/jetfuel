@@ -20,6 +20,7 @@ class WebsitesController < ApplicationController
     def show
       @website = Website.find(params[:id])
       redirect_to @website.long_url
+      @website.increase_hit_count
     end
 
 

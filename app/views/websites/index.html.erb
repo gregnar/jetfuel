@@ -1,9 +1,24 @@
 <%= link_to "Shorten a URL", new_website_path %>
 
 <h2>Websites by Popularity</h2>
-<% @websites.each do |website| %>
+<% @websites.ranked_by_hit_count.each do |website| %>
   <p><b>JetFuel URL:</b> <span> <%= link_to full_short_url(website), website_path(website), target: '_blank' %> </span></p>
-   <p><b>Destination:</b> <span><%= website.long_url %></span></p>
+   <p><b>Destination:</b><span><%= website.long_url %></span></p>
+   <p>
+     <b>Hit Count: </b><span><%= website.hit_count %></span>
+   </p>
+  <p>
+    ------------------------------------
+  </p>
+<% end %>
+
+<h2>Recently added</h2>
+<% @websites.ranked_by_recency.each do |website| %>
+  <p><b>JetFuel URL:</b> <span> <%= link_to full_short_url(website), website_path(website), target: '_blank' %> </span></p>
+   <p><b>Destination:</b><span><%= website.long_url %></span></p>
+   <p>
+     <b>Created at: </b><span><%= website.created_at %></span>
+   </p>
   <p>
     ------------------------------------
   </p>

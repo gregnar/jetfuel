@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faraday'
-gem 'delayed_job'
+gem 'delayed_job_active_record'
 
 
 group :development, :test do
